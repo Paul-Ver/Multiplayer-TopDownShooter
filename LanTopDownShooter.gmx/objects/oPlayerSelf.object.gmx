@@ -29,8 +29,9 @@
 image_speed = image_number/room_speed/2
 
 team = c_blue;
+name = globals.playerName;
 
-walkSpeed = 2;
+walkSpeed = 3;
 runSpeed = 4;
 crouchSpeed = 1;
 
@@ -133,6 +134,9 @@ canShoot = true;
           <argument>
             <kind>1</kind>
             <string>///Playermovement and shooting
+expected_delta_time = 1 / room_speed * 1000000; //In microseconds
+delta = expected_delta_time / delta_time; //Turn this into a ratio
+
 var movementSpeed = walkSpeed;
 accuracyMultiplier = 1;
 
@@ -150,10 +154,10 @@ if(stamina &lt; maxStamina)
 if(stamina &gt; maxStamina)
     stamina = maxStamina;
 
-if keyboard_check(ord("W")){if place_free(x,y-movementSpeed){y-=movementSpeed}}
-if keyboard_check(ord("S")){if place_free(x,y+movementSpeed){y+=movementSpeed}}
-if keyboard_check(ord("A")){if place_free(x-movementSpeed,y){x-=movementSpeed}}
-if keyboard_check(ord("D")){if place_free(x+movementSpeed,y){x+=movementSpeed}}
+if keyboard_check(ord("W")){if place_free(x,y-movementSpeed*delta){y-=movementSpeed*delta}}
+if keyboard_check(ord("S")){if place_free(x,y+movementSpeed*delta){y+=movementSpeed*delta}}
+if keyboard_check(ord("A")){if place_free(x-movementSpeed*delta,y){x-=movementSpeed*delta}}
+if keyboard_check(ord("D")){if place_free(x+movementSpeed*delta,y){x+=movementSpeed*delta}}
 
 image_angle = point_direction (x,y,mouse_x,mouse_y) 
 </string>

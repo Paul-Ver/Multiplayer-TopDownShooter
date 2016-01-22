@@ -35,7 +35,6 @@ if(globals.server_socket &lt; 0){
     room_goto(rm_CreateMatch);
     instance_destroy();
 }
-room_speed = 180;
 </string>
           </argument>
         </arguments>
@@ -276,30 +275,9 @@ switch(t)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>3. Data</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Set room speed
 room_speed = 180;
+show_debug_message("clienthandler room speed set!");
 </string>
           </argument>
         </arguments>
@@ -350,8 +328,8 @@ room_speed = 180;
             <kind>1</kind>
             <string>///Draw server stats
 draw_set_color( c_white );
-draw_text( 5 , 5 , "Server Status: " + string( Server &gt;= 0 ) );
-draw_text( 5 , 20 , "Total Clients: " + string( ds_list_size( SocketList ) ) );
+draw_text( 5 , 5 , "Server Status: " + string( globals.server_socket &gt;= 0 ) );
+draw_text( 5 , 20 , "Total Clients: " + string( ds_list_size( server_socketlist ) ) );
 </string>
           </argument>
         </arguments>
