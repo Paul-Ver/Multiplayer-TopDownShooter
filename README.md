@@ -13,4 +13,4 @@ TODO:
 - Shooting replication/collison check/hp subtraction.
 - More gamemodes
 
-![preview](https://github.com/Paul-Ver/Multiplayer-TopDownShooter/blob/master/screenshot.PNG)
+![preview](https://raw.githubusercontent.com/Paul-Ver/Multiplayer-TopDownShooter/78f4d4ab6fe74a788c362107e961ccad9d052953/screenshot.PNG)
